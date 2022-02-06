@@ -273,6 +273,7 @@
         </dependency>
     </dependencies>
     
+    <!--
     <distributionManagement>
        <repository>
           <uniqueVersion>false</uniqueVersion>
@@ -288,7 +289,18 @@
           <url>http://192.168.239.131:8081/repository/maven-snapshots/</url>
        </snapshotRepository> 
     </distributionManagement>
-
+    -->
+    
+    <distributionManagement>
+       <repository>
+          <uniqueVersion>false</uniqueVersion>
+          <id>nexus</id>
+          <name>My Nexus docker Repository</name>
+          <url>http://192.168.239.131:8081/repository/petclinic/</url>
+          <layout>default</layout>
+       </repository>
+    </distributionManagement>
+    
     <!-- Maven plugin versions are mentioned in order to guarantee the build reproducibility in the long term -->
     <build>
         <defaultGoal>install</defaultGoal>
