@@ -296,7 +296,7 @@
           <uniqueVersion>false</uniqueVersion>
           <id>nexus</id>
           <name>My Nexus docker Repository</name>
-          <url>http://192.168.239.131:8081/repository/petclinic/</url>
+          <url>192.168.239.131:8082</url>
           <layout>default</layout>
        </repository>
     </distributionManagement>
