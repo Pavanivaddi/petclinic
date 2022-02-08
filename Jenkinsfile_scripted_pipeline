@@ -12,7 +12,7 @@ node {
         sh "docker build -t 192.168.239.131:9000/petclinic:${BUILD_NUMBER} ."
     } 
     
-    stage('Login to Nexus and Push docker image to Nexus server'){
+    stage('Login to Nexus server and Push docker image to the Nexus server'){
         withCredentials([usernamePassword(credentialsId: 'Nexus', passwordVariable: 'nexus_pwd', usernameVariable: 'admin')]) {
         sh "docker login -u admin -p ${nexus_pwd} 192.168.239.131:9000"
         sh "docker push 192.168.239.131:9000/petclinic:${BUILD_NUMBER}"
