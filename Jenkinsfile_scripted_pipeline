@@ -30,7 +30,7 @@ node {
         }
         sh "ssh -o StrictHostKeyChecking=no root@192.168.239.129 docker rm -f petclinic_jenkins || true"
         sh "ssh -o StrictHostKeyChecking=no root@192.168.239.129 docker run -d -p 8000:8080 --name petclinic_jenkins 192.168.239.131:9000/petclinic:${BUILD_NUMBER}"
-        sh "ssh -o StrictHostKeyChecking=no root@192.168.239.129 /root/remove_docker_images.sh || true"
+        sh "ssh -o StrictHostKeyChecking=no root@192.168.239.129 /root/remove_docker_images.sh || true" // docker rmi $(docker images -q) > /dev/null 2>&1
       } 
     }      
 }
