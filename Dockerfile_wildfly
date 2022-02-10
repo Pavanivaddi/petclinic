@@ -1,0 +1,4 @@
+FROM bitnami/wildfly:25.0.1
+COPY target/*.war /opt/bitnami/wildfly/standalone/deployments/petclinic.war
+LABEL "RUN_CONTAINER"="docker run -d -e WILDFLY_PASSWORD=<pwd> --name <container_name> -p <host_port>:8080 parthlimbachia1985/wildfly:v1"
+EXPOSE 8080
